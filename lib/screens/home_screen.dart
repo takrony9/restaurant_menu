@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:restaurant_menu/widgets/image_button.dart';
 import 'package:restaurant_menu/const.dart';
 
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
           'Restaurant Menu',
           style: KTextStyle,
         ),
+        automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: Color(0xffe68a00),
       ),
@@ -37,10 +39,16 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.8,
-                child: ListView(
-                  children: [
+              CarouselSlider(
+                  options: CarouselOptions(
+                    height: MediaQuery.of(context).size.height * .9,
+                    autoPlay: true,
+                    viewportFraction: 0.7,
+                    aspectRatio: 1,
+                    enlargeCenterPage: true,
+                    enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  ),
+                  items: [
                     ImageButton(
                       image: 'assets/images/pizza.jfif',
                       type: 'pizza',
@@ -53,9 +61,7 @@ class HomeScreen extends StatelessWidget {
                       image: 'assets/images/fried_chicken.jfif',
                       type: 'fried chicken',
                     ),
-                  ],
-                ),
-              ),
+                  ]),
             ],
           ),
         ),

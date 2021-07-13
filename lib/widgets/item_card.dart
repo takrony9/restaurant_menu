@@ -16,7 +16,7 @@ class ItemCard extends StatelessWidget {
       children: [
         Container(
           height: 100,
-          width: 100,
+          width: double.infinity,
           child: Image(
             image: NetworkImage(image),
             fit: BoxFit.cover,

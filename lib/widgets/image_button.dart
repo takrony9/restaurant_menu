@@ -17,7 +17,10 @@ class ImageButton extends StatelessWidget {
       },
       child: Column(
         children: [
-          Image.asset(image),
+          ClipRRect(
+            child: Image.asset(image),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
           Text(
             type,
             style: KTextStyle,
